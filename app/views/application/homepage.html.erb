@@ -1,0 +1,10 @@
+<% if session[:name] %>
+  <h1>Hi, <%= session[:name] %></h1>
+  <%= form_tag '/logout', method: 'post' do %>
+    <input type="submit" value="Logout">
+  <% end %>
+  <br>
+  <%= link_to "Hey, check this secret", secret_path %>
+<% else %>
+  <%= link_to "Login", login_path %>
+<% end %>
